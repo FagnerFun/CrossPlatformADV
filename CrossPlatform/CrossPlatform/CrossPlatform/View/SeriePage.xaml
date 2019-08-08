@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Title}"
+             x:Class="CrossPlatform.View.SeriePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Favoritar" Order="Primary" Icon="{Binding IconIsFavorite}" Command="{Binding FavoriteCommand }"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout
+            BackgroundColor="#eaeff2">
+                <Image Source="{Binding BackDrop}"
+                   HorizontalOptions="FillAndExpand"
+                   HeightRequest="230"/>
+                
+                <Frame HorizontalOptions="FillAndExpand"
+                       Margin="10"
+                       CornerRadius="5">
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                        <Label Text="VOTES" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                        <BoxView Margin="0,2" HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#eaeff2" />
+                        <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                            <Image Source="{Binding FirstStar}" />
+                            <Image Source="{Binding SecondStar}" />
+                            <Image Source="{Binding ThridStar}" />
+                            <Image Source="{Binding FourStar}" />
+                            <Image Source="{Binding FiveStar}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                
+                <Frame HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand"
+                       Margin="10, 0"
+                       CornerRadius="5">
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                        <Label Text="ABOUT" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                        <BoxView Margin="0,2" HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#eaeff2" />
+                        <Label Text="{Binding OverView}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="5"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame HorizontalOptions="FillAndExpand"
+                       Margin="10"
+                       CornerRadius="5">
+                    <StackLayout Orientation="Vertical" >
+                        <Label Text="INFORMATION" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                        <BoxView Margin="0,2" HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="#eaeff2" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Release:" 
+                                   FontAttributes="Bold"
+                                   FontSize="14"
+                                   VerticalTextAlignment="Center" 
+                                   HorizontalOptions="Start"/>
+                            <Label Text="{Binding ReleaseDate}"
+                                   Margin="5,0,0,0" FontSize="12" 
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

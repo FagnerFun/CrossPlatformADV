@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1367" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.673156" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.1.0.673156" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CrossPlatform.Domain\CrossPlatform.Domain.csproj" />
+    <ProjectReference Include="..\..\CrossPlatform.Infra.LiteDB\CrossPlatform.Infra.LiteDB.csproj" />
+    <ProjectReference Include="..\..\CrossPlatform.Infra.SQLite\CrossPlatform.Infra.SQLite.csproj" />
+    <ProjectReference Include="..\..\CrossPlatform.Service\CrossPlatform.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\SeriesPages.xaml.cs">
+      <DependentUpon>SeriesPages.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\SeriePage.xaml.cs">
+      <DependentUpon>SeriePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\FavoritePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SeriePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SeriesPages.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
